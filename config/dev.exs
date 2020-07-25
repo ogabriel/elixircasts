@@ -4,7 +4,7 @@ use Mix.Config
 config :teacher, Teacher.Repo,
   username: "postgres",
   password: "root",
-  database: "teacher_dev",
+  database: "teacher_dev_13",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -17,7 +17,7 @@ config :teacher, Teacher.Repo,
 # with webpack to recompile .js and .css sources.
 config :teacher, TeacherWeb.Endpoint,
   http: [port: 4000],
-  debug_errors: true,
+  debug_errors: false,
   code_reloader: true,
   check_origin: false,
   watchers: [
