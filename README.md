@@ -1,7 +1,7 @@
 # Teacher
 
-Steps from ElixirCasts#1:
-- https://elixircasts.io/getting-started-with-phoenix
+Steps from ElixirCasts#2:
+- https://elixircasts.io/adding-comments-with-ecto-associations
 
 To start your Phoenix server:
 
