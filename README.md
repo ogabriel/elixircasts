@@ -1,5 +1,4 @@
-# ElixirCasts projects
+# GenSever
 
-The projects built in by this exercises: https://elixircasts.io/
-
-Each of the projects will be in a branch with its given number
+Steps from ElixirCasts#12:
+- https://elixircasts.io/intro-to-genserver
