@@ -1,6 +1,14 @@
 defmodule TeacherWeb.ErrorView do
   use TeacherWeb, :view
 
+  def render("404.html", _assigns) do
+    render("404_page.html", %{})
+  end
+
+  def render("500.html", _assigns) do
+    render("500_page.html", %{})
+  end
+
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.
   # def render("500.html", _assigns) do
