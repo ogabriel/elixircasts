@@ -6,7 +6,7 @@ defmodule Teacher.Posts do
   import Ecto.Query, warn: false
   alias Teacher.Repo
 
-  alias Teacher.Posts.Post
+  alias Teacher.Posts.{Post, Comment}
 
   @doc """
   Returns the list of posts.
@@ -37,6 +37,12 @@ defmodule Teacher.Posts do
   """
   def get_post!(id), do: Repo.get!(Post, id)
 
+  def get_post_preloaded!(id) do
+    Post
+    |> Repo.get!(id)
+    |> Repo.preload(:comments)
+  end
+
   @doc """
   Creates a post.
 
@@ -52,6 +58,12 @@ defmodule Teacher.Posts do
   def create_post(attrs \\ %{}) do
     %Post{}
     |> Post.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  def create_post_comment(post, attrs \\ %{}) do
+    post
+    |> Ecto.build_assoc(:comments, body: attrs)
     |> Repo.insert()
   end
 
@@ -100,5 +112,15 @@ defmodule Teacher.Posts do
   """
   def change_post(%Post{} = post) do
     Post.changeset(post, %{})
+  end
+
+  def create_comment(attrs \\ %{}) do
+    %Comment{}
+    |> Comment.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  def change_comment(%Comment{} = comment) do
+    Comment.changeset(comment, %{})
   end
 end
