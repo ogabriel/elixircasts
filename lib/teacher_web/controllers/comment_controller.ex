@@ -2,22 +2,18 @@ defmodule TeacherWeb.CommentController do
   use TeacherWeb, :controller
 
   alias Teacher.Posts
-  alias Teacher.Posts.Post
 
-  def create(conn, %{"post" => post_params}) do
-    case Posts.create_post(post_params) do
-      {:ok, post} ->
+  def create(conn, %{"comment" => comment_params, "post_id" => post_id}) do
+    post = Posts.get_post!(post_id)
+
+    case Posts.create_post_comment(post, comment_params["body"]) do
+      {:ok, comment} ->
         conn
-        |> put_flash(:info, "Post created successfully.")
+        |> put_flash(:info, "Comment created successfully.")
         |> redirect(to: Routes.post_path(conn, :show, post))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
-  end
-
-  def show(conn, %{"id" => id}) do
-    post = Posts.get_post!(id)
-    render(conn, "show.html", post: post)
   end
 end
