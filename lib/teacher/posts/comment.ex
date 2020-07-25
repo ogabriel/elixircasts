@@ -5,7 +5,7 @@ defmodule Teacher.Posts.Comment do
   schema "comments" do
     field :body, :string
 
-    belongs_to :posts, Teacher.Posts.Post
+    belongs_to :post, Teacher.Posts.Post
 
     timestamps()
   end
