@@ -6,6 +6,8 @@ defmodule Teacher.Posts.Post do
     field :body, :string
     field :title, :string
 
+    has_many :comments, Teacher.Posts.Comment
+
     timestamps()
   end
 
