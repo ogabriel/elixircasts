@@ -17,6 +17,8 @@ defmodule TeacherWeb.PostController do
   def create(conn, %{"post" => post_params}) do
     case Posts.create_post(post_params) do
       {:ok, post} ->
+        send_creation_notification(post)
+
         conn
         |> put_flash(:info, "Post created successfully.")
         |> redirect(to: Routes.post_path(conn, :show, post))
@@ -56,15 +58,22 @@ defmodule TeacherWeb.PostController do
     post = Posts.get_post!(id)
     {:ok, _post} = Posts.delete_post(post)
 
-    send_removal_notification
+    send_removal_notification(post)
 
     conn
     |> put_flash(:info, "Post deleted successfully.")
     |> redirect(to: Routes.post_path(conn, :index))
   end
 
-  defp send_removal_notification do
-    Email.post_removal_email()
+  defp send_creation_notification(post) do
+    post
+    |> Email.post_creation_email()
+    |> Mailer.deliver_later()
+  end
+
+  defp send_removal_notification(post) do
+    post
+    |> Email.post_removal_email()
     |> Mailer.deliver_later()
   end
 end
