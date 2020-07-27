@@ -1,7 +1,7 @@
 defmodule TeacherWeb.PostController do
   use TeacherWeb, :controller
 
-  alias Teacher.Posts
+  alias Teacher.{Posts, Mailer, Email}
   alias Teacher.Posts.{Post, Comment}
 
   def index(conn, _params) do
@@ -56,8 +56,15 @@ defmodule TeacherWeb.PostController do
     post = Posts.get_post!(id)
     {:ok, _post} = Posts.delete_post(post)
 
+    send_removal_notification
+
     conn
     |> put_flash(:info, "Post deleted successfully.")
     |> redirect(to: Routes.post_path(conn, :index))
+  end
+
+  defp send_removal_notification do
+    Email.post_removal_email()
+    |> Mailer.deliver_later()
   end
 end
