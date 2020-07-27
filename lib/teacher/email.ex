@@ -1,13 +1,24 @@
 defmodule Teacher.Email do
-  import Bamboo.Email
+  use Bamboo.Phoenix, view: Teacher.EmailView
 
-  def post_removal_email do
-    new_email(
-      from: "no-reply@elixircasts.io",
-      to: "hello@elixircasts.io",
-      subject: "Movie removed",
-      text_body: "A movie was added.",
-      html_body: "A movie was added."
-    )
+  def post_removal_email(post) do
+    base_email
+    |> subject("A post was removed")
+    |> assign(:post, post)
+    |> render("post_removal.html")
+  end
+
+  def post_creation_email(post) do
+    base_email
+    |> subject("A post was created")
+    |> assign(:post, post)
+    |> render("post_creation.html")
+  end
+
+  defp base_email do
+    new_email
+    |> from("no-reply@elixircasts.io")
+    |> to("hello@elixircasts.io")
+    |> put_html_layout({TeacherWeb.LayoutView, "email.html"})
   end
 end
