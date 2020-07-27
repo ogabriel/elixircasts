@@ -1,7 +1,7 @@
 # Teacher
 
-Steps from ElixirCasts#2:
-- https://elixircasts.io/adding-comments-with-ecto-associations
+Steps from ElixirCasts#14:
+- https://elixircasts.io/sending-email-with-bamboo-part-1
 
 To start your Phoenix server:
 
