@@ -1,8 +1,7 @@
 # Teacher
 
-Steps form ElixirCast#8
-  * https://elixircasts.io/seo-friendly-urls-with-phoenix
-  * https://elixircasts.io/seeding-data-in-phoenix
+Steps form ElixirCast#13
+  * https://elixircasts.io/custom-error-pages-in-phoenix
 
 To start your Phoenix server:
 
