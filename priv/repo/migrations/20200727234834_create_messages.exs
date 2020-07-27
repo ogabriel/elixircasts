@@ -10,5 +10,6 @@ defmodule Chat.Repo.Migrations.CreateMessages do
       timestamps()
     end
 
+    create index(:messages, [:room])
   end
 end
