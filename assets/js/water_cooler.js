@@ -23,7 +23,7 @@ let WaterCooler = {
       let chatBox = document.querySelector('#chat-box')
       let msgBlock = document.createElement('p')
 
-      msgBlock.insertAdjacentHTML('beforeend', `${payload.name}: ${payload.body}`)
+      msgBlock.insertAdjacentHTML('beforeend', `<b> ${payload.name}</b>: ${payload.body}`)
       chatBox.appendChild(msgBlock)
     })
   }
