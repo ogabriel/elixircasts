@@ -1,8 +1,8 @@
 # Teacher
 
-Steps from ElixirCasts#14:
-- https://elixircasts.io/sending-email-with-bamboo-part-1
-
+Steps from ElixirCasts#15:
+- https://elixircasts.io/sending-email-with-bamboo-part-2
+-
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
