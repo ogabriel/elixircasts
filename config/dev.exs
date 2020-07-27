@@ -4,7 +4,7 @@ use Mix.Config
 config :chat, Chat.Repo,
   username: "postgres",
   password: "postgres",
-  database: "chat_dev",
+  database: "chat_dev_100",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
