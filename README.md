@@ -1,5 +1,8 @@
 # Chat
 
+Steps from ElixirCasts#38:
+- https://elixircasts.io/chat-room-in-8-minutes
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
