@@ -21,6 +21,14 @@ defmodule Chat.Chats do
     Repo.all(Message)
   end
 
+  @doc false
+  def list_messages_by_room(room) do
+    Message
+    |> where(room: ^room)
+    |> order_by(asc: :inserted_at)
+    |> Repo.all()
+  end
+
   @doc """
   Gets a single message.
 
