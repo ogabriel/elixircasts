@@ -14,9 +14,6 @@ defmodule ChatWeb.ChatChannel do
   def handle_in("shout", payload, socket) do
     "chat:" <> room = socket.topic
 
-    require IEx
-    IEx.pry()
-
     payload
     |> Map.merge(%{"room" => room})
     |> Chats.create_message()
