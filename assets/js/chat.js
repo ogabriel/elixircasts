@@ -23,7 +23,7 @@ let Chat = {
       let chatBox = document.querySelector("#chat-box")
       let msgBlock = document.createElement("p")
 
-      msgBlock.insertAdjacentHTML("beforeend", `<b>${payload.name}:</b> ${payload.message}`)
+      msgBlock.insertAdjacentHTML("beforeend", `<b>${payload.name}:</b> ${payload.body}`)
       chatBox.appendChild(msgBlock)
     })
 
