@@ -2,7 +2,7 @@
 
 <div id="chat-box">
   <%= for message <- @messages do %>
-    <p><b><%= message.name %> :</b> <%= message.body %></p>
+    <p><b><%= message.name %>:</b> <%= message.body %></p>
   <% end %>
 </div>
 
