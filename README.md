@@ -1,7 +1,7 @@
 # Teacher
 
-Steps from ElixirCasts#19:
-- https://elixircasts.io/intro-to-function-plugs
+Steps from ElixirCasts#20:
+- https://elixircasts.io/intro-to-module-plugs
 
 To start your Phoenix server:
 
