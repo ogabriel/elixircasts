@@ -1,5 +1,7 @@
 <h1>Listing Posts</h1>
 
+<p>Post count: <%= @post_count %></p>
+
 <table>
   <thead>
     <tr>
