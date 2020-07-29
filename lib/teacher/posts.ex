@@ -21,6 +21,13 @@ defmodule Teacher.Posts do
     Repo.all(Post)
   end
 
+  @doc false
+  def count_posts do
+    Post
+    |> select([p], count(p.id))
+    |> Repo.one()
+  end
+
   @doc """
   Gets a single post.
 
