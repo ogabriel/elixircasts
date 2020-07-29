@@ -6,7 +6,7 @@ defmodule TeacherWeb.PostController do
   alias Teacher.Posts
   alias Teacher.Posts.{Post, Comment}
 
-  plug :post_count
+  plug :post_count when action in [:index]
 
   def index(conn, _params) do
     posts = Posts.list_posts()
