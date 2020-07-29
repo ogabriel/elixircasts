@@ -1,8 +1,12 @@
 defmodule TeacherWeb.PostController do
   use TeacherWeb, :controller
 
+  import TeacherWeb.PostsDataPlug
+
   alias Teacher.Posts
   alias Teacher.Posts.{Post, Comment}
+
+  plug :post_count
 
   def index(conn, _params) do
     posts = Posts.list_posts()
