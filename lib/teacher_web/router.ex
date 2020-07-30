@@ -21,6 +21,8 @@ defmodule TeacherWeb.Router do
     resources "/posts", PostController do
       resources "/comments", CommentController, only: [:create]
     end
+
+    resources "/users", UserController
   end
 
   # Other scopes may use custom stacks.
