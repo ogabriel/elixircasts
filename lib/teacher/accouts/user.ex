@@ -2,8 +2,6 @@ defmodule Teacher.Accouts.User do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Comeonin.Bcrypt
-
   schema "users" do
     field :encrypted_password, :string
     field :username, :string
