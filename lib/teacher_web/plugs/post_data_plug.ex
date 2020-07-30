@@ -4,10 +4,19 @@ defmodule TeacherWeb.PostDataPlug do
   alias Teacher.Posts
 
   def init(opts) do
-    opts
+    Keyword.fetch(opts, :msg)
   end
 
-  def call(conn, _opts) do
-    assign(conn, :post_count, Posts.count_posts())
+  def call(conn, opts) do
+    msg =
+      case opts do
+        {:ok, msg} ->
+          "#{msg} #{Posts.count_posts()}."
+
+        :error ->
+          "We found #{Posts.count_posts()} posts."
+      end
+
+    assign(conn, :post_count, msg)
   end
 end
