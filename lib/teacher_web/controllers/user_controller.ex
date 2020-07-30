@@ -13,6 +13,7 @@ defmodule TeacherWeb.UserController do
     case Accouts.create_user(user_params) do
       {:ok, user} ->
         conn
+        |> put_session(:current_user_id, user.id)
         |> put_flash(:info, "Signed up successfully.")
         |> redirect(to: Routes.post_path(conn, :index))
 
