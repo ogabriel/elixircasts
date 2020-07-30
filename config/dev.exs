@@ -3,8 +3,8 @@ use Mix.Config
 # Configure your database
 config :teacher, Teacher.Repo,
   username: "postgres",
-  password: "root",
-  database: "teacher_dev",
+  password: "postgres",
+  database: "teacher_dev_42",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
