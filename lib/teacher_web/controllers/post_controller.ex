@@ -5,7 +5,7 @@ defmodule TeacherWeb.PostController do
   alias Teacher.Posts.{Post, Comment}
   alias TeacherWeb.PostDataPlug
 
-  plug PostDataPlug when action in [:index]
+  plug PostDataPlug, [msg: "Your post total is"] when action in [:index]
 
   def index(conn, _params) do
     posts = Posts.list_posts()
