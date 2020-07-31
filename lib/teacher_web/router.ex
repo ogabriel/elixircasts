@@ -31,7 +31,7 @@ defmodule TeacherWeb.Router do
   end
 
   if Mix.env() == :dev do
-    foward("/sent_emails", Bamboo.SentEmailViewerPlug)
+    forward "/sent_emails", Bamboo.SentEmailViewerPlug
   end
 
   # Other scopes may use custom stacks.
