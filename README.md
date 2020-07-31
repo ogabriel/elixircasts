@@ -2,6 +2,8 @@
 
 Steps from ElixirCasts#118:
 - https://elixircasts.io/password-reset
+- https://elixircasts.io/sending-email-with-bamboo-part-1
+- https://elixircasts.io/sending-email-with-bamboo-part-2
 
 To start your Phoenix server:
 
