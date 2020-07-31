@@ -40,6 +40,7 @@ defmodule TeacherWeb do
       use Phoenix.HTML
 
       import TeacherWeb.ErrorHelpers
+      import TeacherWeb.AuthHelpers, only: [signed_in?: 1]
       import TeacherWeb.Gettext
       alias TeacherWeb.Router.Helpers, as: Routes
     end
