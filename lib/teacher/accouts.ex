@@ -37,6 +37,9 @@ defmodule Teacher.Accouts do
   """
   def get_user!(id), do: Repo.get!(User, id)
 
+  def get_user_by_username(nil), do: nil
+  def get_user_by_username(username), do: Repo.get_by(User, username: username)
+
   @doc """
   Creates a user.
 
