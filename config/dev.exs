@@ -4,7 +4,7 @@ use Mix.Config
 config :teacher, Teacher.Repo,
   username: "postgres",
   password: "postgres",
-  database: "teacher_dev_42",
+  database: "teacher_dev_100",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
