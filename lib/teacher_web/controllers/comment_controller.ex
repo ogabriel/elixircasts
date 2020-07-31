@@ -2,6 +2,9 @@ defmodule TeacherWeb.CommentController do
   use TeacherWeb, :controller
 
   alias Teacher.Posts
+  alias TeacherWeb.AuthPlug
+
+  plug AuthPlug, [msg: "You can comment after login"] when action in [:create]
 
   def create(conn, %{"comment" => comment_params, "post_id" => post_id}) do
     post = Posts.get_post!(post_id)
