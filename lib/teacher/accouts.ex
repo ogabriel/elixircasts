@@ -40,6 +40,21 @@ defmodule Teacher.Accouts do
   def get_user_by_username(nil), do: nil
   def get_user_by_username(username), do: Repo.get_by(User, username: username)
 
+  def set_token_on_user(user) do
+    attrs = %{
+      "password_reset_token" => SecureRandom.urlsafe_base64(),
+      "password_reset_sent_at" => NaiveDateTime.utc_now()
+    }
+
+    user
+    |> User.changeset(attrs)
+    |> Repo.update!()
+  end
+
+  def get_user_from_token(token) do
+    Repo.get_by(User, password_reset_token: token)
+  end
+
   @doc """
   Creates a user.
 
