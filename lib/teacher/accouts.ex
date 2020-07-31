@@ -55,6 +55,11 @@ defmodule Teacher.Accouts do
     Repo.get_by(User, password_reset_token: token)
   end
 
+  def valid_token?(token_sent_at) do
+    current_time = NaiveDateTime.utc_now()
+    Time.diff(current_time, token_sent_at) < 7200
+  end
+
   @doc """
   Creates a user.
 
