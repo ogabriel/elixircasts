@@ -44,7 +44,8 @@ defmodule Teacher.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:comeonin, "~> 5.3"},
-      {:bcrypt_elixir, "~> 2.0"}
+      {:bcrypt_elixir, "~> 2.0"},
+      {:secure_random, "~> 0.5.1"}
     ]
   end
 
