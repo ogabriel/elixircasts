@@ -1,7 +1,7 @@
 # Teacher
 
-Steps from ElixirCasts#42:
-- https://elixircasts.io/user-authentication-with-phoenix
+Steps from ElixirCasts#118:
+- https://elixircasts.io/password-reset
 
 To start your Phoenix server:
 
