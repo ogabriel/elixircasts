@@ -1,7 +1,7 @@
 defmodule TeacherWeb.PasswordResetController do
   use TeacherWeb, :controller
 
-  alias Teacher.Accouts
+  alias Teacher.{Accouts, Email, Mailer}
 
   def new(conn, _params) do
     render(conn, "new.html")
@@ -17,6 +17,8 @@ defmodule TeacherWeb.PasswordResetController do
       user ->
         user
         |> Accouts.set_token_on_user()
+        |> Email.password_reset()
+        |> Mailer.deliver_later()
 
         conn
         |> put_flash(:info, "Email sent with password reset instructions")
