@@ -16,3 +16,5 @@ config :teacher, TeacherWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+config :teacher, Teacher.Mailer, adapter: Bamboo.TestAdapter
