@@ -30,6 +30,10 @@ defmodule TeacherWeb.Router do
     delete "/sign_out", SessionController, :delete
   end
 
+  if Mix.env() == :dev do
+    foward("/sent_emails", Bamboo.SentEmailViewerPlug)
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", TeacherWeb do
   #   pipe_through :api
