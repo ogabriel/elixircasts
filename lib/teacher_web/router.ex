@@ -23,6 +23,7 @@ defmodule TeacherWeb.Router do
     end
 
     resources "/registrations", UserController, only: [:new, :create]
+    resources "/password_reset", PasswordResetController, except: [:index, :show]
 
     get "/sign_in", SessionController, :new
     post "/sign_in", SessionController, :create
