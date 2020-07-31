@@ -21,6 +21,7 @@ defmodule Teacher.Accouts.User do
       :password_reset_sent_at
     ])
     |> validate_required([:username, :encrypted_password])
+    |> validate_confirmation(:encrypted_password)
     |> unique_constraint(:username)
     |> update_change(:encrypted_password, &Bcrypt.hash_pwd_salt/1)
   end
