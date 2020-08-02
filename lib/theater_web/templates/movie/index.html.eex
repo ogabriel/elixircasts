@@ -1,0 +1,18 @@
+<h1>Listing Movies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Summary</th>
+      <th>Year</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render_many @movies, TheaterWeb.MovieView, "_movie.html", conn: @conn %>
+  </tbody>
+</table>
+
+<span><%= link "New Movie", to: Routes.movie_path(@conn, :new) %></span>
