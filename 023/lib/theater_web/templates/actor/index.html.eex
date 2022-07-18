@@ -1,0 +1,17 @@
+<h1>Listing Actors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Likes</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render_many @actors, TheaterWeb.ActorView, "_actor.html", conn: @conn %>
+  </tbody>
+</table>
+
+<span><%= link "New Actor", to: Routes.actor_path(@conn, :new) %></span>
